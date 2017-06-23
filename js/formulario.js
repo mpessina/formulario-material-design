@@ -9,14 +9,31 @@ var formulario = document.formulario_registro,
 var validarInputs = function(){
 	for (var i = 0; i < elementos.length; i++) {
 		// Identificamos si el elemento es de tipo texto, email, password, radio o checkbox
-		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
+		if (elementos[i].type == "text" || 
+			elementos[i].type == "email" || 
+			elementos[i].type == "password" ||
+			elementos[i].type == "date" ||
+			elementos[i].type == "datetime-local" ||
+			elementos[i].type == "month" ||
+			elementos[i].type == "number" ||
+			elementos[i].type == "search" ||
+			elementos[i].type == "tel" ||
+			elementos[i].type == "time" ||
+			elementos[i].type == "url" ||
+			elementos[i].type == "week"
+			) {
 			// Si es tipo texto, email o password vamos a comprobar que esten completados los input
 			if (elementos[i].value.length == 0) {
 				console.log('El campo ' + elementos[i].name + ' esta incompleto');
 				elementos[i].className = elementos[i].className + " error";
+
+				elementos[i].style.color="#FF0FF0";
+
+
 				return false;
 			} else {
 				elementos[i].className = elementos[i].className.replace(" error", "");
+				elementos[i].style.color="#0000FF";
 			}
 		}
 	}
@@ -27,9 +44,11 @@ var validarInputs = function(){
 		elementos.pass2.value = "";
 		elementos.pass.className = elementos.pass.className + " error";
 		elementos.pass2.className = elementos.pass2.className + " error";
+		elementos[i].style.color="#00FFee";
 	} else {
 		elementos.pass.className = elementos.pass.className.replace(" error", "");
 		elementos.pass2.className = elementos.pass2.className.replace(" error", "");
+		elementos[i].style.color="#00eeFF";
 	}
 
 	return true;
@@ -120,10 +139,33 @@ var blurInput = function(){
 formulario.addEventListener("submit", enviar);
 
 for (var i = 0; i < elementos.length; i++) {
-	if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "password") {
+	if (elementos[i].type == "text" || 
+		elementos[i].type == "email" || 
+		elementos[i].type == "password" ||
+		elementos[i].type == "date" ||
+		elementos[i].type == "datetime-local" ||
+		elementos[i].type == "month" ||
+		elementos[i].type == "number" ||
+		elementos[i].type == "search" ||
+		elementos[i].type == "tel" ||
+		elementos[i].type == "time" ||
+		elementos[i].type == "url" ||
+		elementos[i].type == "week"
+		) {
 		elementos[i].addEventListener("focus", focusInput);
 		elementos[i].addEventListener("blur", blurInput);
 	}
 }
 
-}())
+}());
+
+
+
+$("#myel").on("input",function(){
+    if($(this).val().length>0){
+    $(this).addClass("full");
+}
+else{
+   $(this).removeClass("full");
+   }
+ });

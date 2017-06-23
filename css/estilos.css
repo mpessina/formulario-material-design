@@ -30,7 +30,16 @@ body {
       margin-bottom: 32px; }
       .contenedor-formulario .formulario .input-group input[type="text"],
       .contenedor-formulario .formulario .input-group input[type="email"],
-      .contenedor-formulario .formulario .input-group input[type="password"] {
+      .contenedor-formulario .formulario .input-group input[type="password"],
+      .contenedor-formulario .formulario .input-group input[type="date"],
+      .contenedor-formulario .formulario .input-group input[type="datetime-local"],
+      .contenedor-formulario .formulario .input-group input[type="month"],
+      .contenedor-formulario .formulario .input-group input[type="number"],
+      .contenedor-formulario .formulario .input-group input[type="search"],
+      .contenedor-formulario .formulario .input-group input[type="tel"],
+      .contenedor-formulario .formulario .input-group input[type="time"],
+      .contenedor-formulario .formulario .input-group input[type="url"],
+      .contenedor-formulario .formulario .input-group input[type="week"]{
         font-family: "Roboto";
         font-size: 16px;
         color: #303F9F;
@@ -40,20 +49,64 @@ body {
         background: none;
         border: none;
         border-bottom: 2px solid #BBDEFB; }
-        .contenedor-formulario .formulario .input-group input[type="text"]:focus, .contenedor-formulario .formulario .input-group input[type="text"]:active,
+        .contenedor-formulario .formulario .input-group input[type="text"]:focus,
+        .contenedor-formulario .formulario .input-group input[type="text"]:change, 
+        .contenedor-formulario .formulario .input-group input[type="text"]:active,
         .contenedor-formulario .formulario .input-group input[type="email"]:focus,
         .contenedor-formulario .formulario .input-group input[type="email"]:active,
         .contenedor-formulario .formulario .input-group input[type="password"]:focus,
-        .contenedor-formulario .formulario .input-group input[type="password"]:active {
+        .contenedor-formulario .formulario .input-group input[type="password"]:active,
+        .contenedor-formulario .formulario .input-group input[type="date"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="date"]:active,
+        .contenedor-formulario .formulario .input-group input[type="datetime-local"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="datetime-local"]:active,
+        .contenedor-formulario .formulario .input-group input[type="month"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="month"]:active,
+        .contenedor-formulario .formulario .input-group input[type="number"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="number"]:active,
+        .contenedor-formulario .formulario .input-group input[type="search"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="search"]:active,
+        .contenedor-formulario .formulario .input-group input[type="tel"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="tel"]:active,
+        .contenedor-formulario .formulario .input-group input[type="time"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="time"]:active,
+        .contenedor-formulario .formulario .input-group input[type="url"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="url"]:active,
+        .contenedor-formulario .formulario .input-group input[type="week"]:focus, 
+        .contenedor-formulario .formulario .input-group input[type="week"]:active {
           outline: none;
-          border-bottom: 2px solid #303F9F; }
+          border-bottom: 2px solid #303F9F; 
+          color: #ff0000 !important;
+
+        }
         .contenedor-formulario .formulario .input-group input[type="text"].error,
         .contenedor-formulario .formulario .input-group input[type="email"].error,
-        .contenedor-formulario .formulario .input-group input[type="password"].error {
+        .contenedor-formulario .formulario .input-group input[type="password"].error, 
+        .contenedor-formulario .formulario .input-group input[type="date"].error,
+        .contenedor-formulario .formulario .input-group input[type="datetime-local"].error,
+        .contenedor-formulario .formulario .input-group input[type="month"].error,
+        .contenedor-formulario .formulario .input-group input[type="number"].error,
+        .contenedor-formulario .formulario .input-group input[type="search"].error,
+        .contenedor-formulario .formulario .input-group input[type="tel"].error,
+        .contenedor-formulario .formulario .input-group input[type="time"].error,
+        .contenedor-formulario .formulario .input-group input[type="url"].error,
+        .contenedor-formulario .formulario .input-group input[type="week"].error {
+
+
           border-bottom: 2px solid #D32F2F; }
           .contenedor-formulario .formulario .input-group input[type="text"].error + label,
           .contenedor-formulario .formulario .input-group input[type="email"].error + label,
-          .contenedor-formulario .formulario .input-group input[type="password"].error + label {
+          .contenedor-formulario .formulario .input-group input[type="password"].error + label, 
+          .contenedor-formulario .formulario .input-group input[type="date"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="datetime-local"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="month"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="number"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="search"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="tel"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="time"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="url"].error + label,
+          .contenedor-formulario .formulario .input-group input[type="week"].error + label {
+
             color: #D32F2F; }
       .contenedor-formulario .formulario .input-group label {
         color: #303F9F; }
@@ -66,13 +119,16 @@ body {
           line-height: 16px;
           position: absolute;
           top: 16px;
-          left: 0; }
+          left: 0;
+          color: #5555cc;
+           }
           .contenedor-formulario .formulario .input-group label.label.active {
             top: -12px;
             font-size: 12px;
             line-height: 12px;
             color: #B6B6B6; }
-      .contenedor-formulario .formulario .input-group.checkbox label, .contenedor-formulario .formulario .input-group.radio label {
+      .contenedor-formulario .formulario .input-group.checkbox label, 
+      .contenedor-formulario .formulario .input-group.radio label {
         display: inline-block;
         cursor: pointer;
         color: #303F9F;
@@ -83,9 +139,11 @@ body {
         -webkit-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
-        .contenedor-formulario .formulario .input-group.checkbox label:hover, .contenedor-formulario .formulario .input-group.radio label:hover {
+        .contenedor-formulario .formulario .input-group.checkbox label:hover, 
+        .contenedor-formulario .formulario .input-group.radio label:hover {
           background: #bbdefb; }
-        .contenedor-formulario .formulario .input-group.checkbox label:before, .contenedor-formulario .formulario .input-group.radio label:before {
+        .contenedor-formulario .formulario .input-group.checkbox label:before, 
+        .contenedor-formulario .formulario .input-group.radio label:before {
           content: "";
           display: inline-block;
           width: 17px;
@@ -138,3 +196,16 @@ body {
         background: #1976D2; }
 
 /*# sourceMappingURL=estilos.css.map */
+
+
+
+input[type="date"]:before{
+    color:lightgray;
+    content:attr(placeholder);
+}
+
+input[type="date"].full:before {
+    color:black;
+    content:""!important;
+}
+
